@@ -1,0 +1,209 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "voids.UI",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_112386399 { 
+   	label=voids
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   SimpleWindowCreator112386399[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SimpleWindowCreator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createAndShowWindow(CarNumber: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- readDataFromFile(model: DefaultTableModel, filePath: String, CarNumber: String)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+UI112386399[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)UI</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   Ms: Mouse [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   box1: Box [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   box2: Box [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   box3: Box [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   button_add: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   button_delete: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   button_edit: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   button_open: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   button_profile: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   button_save: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   button_search: JButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   data: Object[][] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   elements: String[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   extMenuIt: JMenuItem [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   fileMenu: JMenu [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   headers: Object[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   ihandler: iHandler [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   key: Key [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   newMenuIt: JMenuItem [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   openMenuIt: JMenuItem [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   saveMenuIt: JMenuItem [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   search_label: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   sorting: String[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   sortingCombolBox: JComboBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   sortingLabel: JLabel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   table: JTable [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tableModel: DefaultTableModel [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   textArea: JTextArea [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   toolBar: JToolBar [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   сomboBox: JComboBox [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- Bar()</TD></TR>
+<TR><TD ALIGN="LEFT" >- Menu()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2708 { 
+   	label=UI
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Key1971231357[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Key</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ keyPressed(e: KeyEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ keyReleased(e: KeyEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ keyTyped(e: KeyEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Mouse1971231357[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Mouse</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ mouseClicked(e: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ mouseEntered(e: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ mouseExited(e: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ mousePressed(e: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ mouseReleased(e: MouseEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+iHandler1971231357[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)iHandler</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ actionPerformed(e: ActionEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+UI112386399 -> Key1971231357[label="key
+[0..1]"];
+UI112386399 -> Mouse1971231357[label="Ms
+[0..1]"];
+UI112386399 -> iHandler1971231357[label="ihandler
+[0..1]"];
+iHandler1971231357 -> SimpleWindowCreator112386399[label="actionPerformed() -> createAndShowWindow()"];
+    
+}
+@enduml
